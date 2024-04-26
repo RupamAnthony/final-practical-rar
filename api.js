@@ -13,3 +13,16 @@ function connect() {
 function display(items) {
     var container = document.getElementById("container");
     container.textContent = "";
+
+    var maxToShow = 5;
+
+
+    for (var r = 0; r < items.length; r++) {
+        if (r < maxToShow) {
+            var newDiv = document.createElement("div");
+            newDiv.innerHTML = `Meal ID: <b>${items[r].idMeal}</b> <br> Meal Title: <b>${items[r].strMeal}</b><br>
+                                <img src="${items[r].strMealThumb}"><br>
+                               <b> Cooking Instruction: </b> ${items[r].strInstructions}<br><br>`;
+            newDiv.classList.add("innerStyle");
+            container.appendChild(newDiv);
+        } else {
